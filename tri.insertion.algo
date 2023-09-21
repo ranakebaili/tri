@@ -1,0 +1,17 @@
+ALGORITHM tri_insertion
+VAR
+    n,i,p,v: INTEGER;
+    t: array of INTEGER [];
+BEGIN
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        IF (t(i-1)>t[i]) THEN
+            v:=t[i];
+            p:=i;
+            WHILE (t[p-1]>v) and (p>0) DO
+                t[p]:=t[p-1];
+                p:=p-1;
+            END_WHILE
+            t[p]:=v;
+        END_IF
+    END_FOR
+END
